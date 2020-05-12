@@ -1,0 +1,253 @@
+{
+	"variables": [],
+	"info": {
+		"name": "exchange-api",
+		"_postman_id": "09c0756d-cc6f-ed69-ad15-c407841c01c8",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9005/oauth/token?grant_type=password&username=diegol&password=pass",
+			"request": {
+				"url": {
+					"raw": "http://localhost:9005/oauth/token?grant_type=password&username=diegol&password=pass",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9005",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "username",
+							"value": "diegol",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "password",
+							"value": "pass",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic ZXhjaGFuZ2UtYXBpLXJlYWQtd3JpdGU6c2VjcmV0",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9005/exchange-calculator-api/calculator",
+			"request": {
+				"url": "localhost:9005/exchange-calculator-api/calculator",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer  eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1ODkyNjAxMjYsInVzZXJfbmFtZSI6ImRpZWdvbCIsImF1dGhvcml0aWVzIjpbIkNBTENVTEFUT1JfUkVBRCIsIlJPTEVfQURNSU4iLCJDQUxDVUxBVE9SX1dSSVRFIiwiVVNFUl9SRUFEIiwiVVNFUl9XUklURSJdLCJqdGkiOiI3Y2I0MmY4Yi1mZjZkLTRhNTEtYjk5ZS01MzE2YjZmNmNkY2QiLCJjbGllbnRfaWQiOiJleGNoYW5nZS1hcGktcmVhZC13cml0ZSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdfQ.LPAf_mi5qPzUCfcHnd8Oto042cUKzYt250tEZ24B_SbmRVqZJUOz_lCXBI1_xDOwnZJiWlVXlJhrleZNd8L2wh678l2ZG-jj2n54lo1Yojx8ajzYhs-psEFkY0cNnaJfowCy9PbP8DqT7sm9mMG7wj_Es9wcMiccb-hbA8u6rLAOacwiW0AXJ20Dl3-2t8Ft_sYJ_2hMKfqrGnZ7JeCBOjyl1iQDCr_7ityJPpTDirFZdG778f3UnPAX1_avU9DzZEgv82ZzXDE_ZLMiKHlN5Ip9VyQx2hpwWdLTsfsIMgVZtQ-Z417hd86R0Q5ogvE5x60RBe6s_rlnXp1hi4-2pQ",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"exchangeFrom\" : \"3\",\n    \"exchangeTo\" : \"1\",\n    \"amount\" : \"10\"\n  \n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9999/oauth/revoke",
+			"request": {
+				"url": "http://localhost:9999/oauth/revoke",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1ODkyNjAxMjYsInVzZXJfbmFtZSI6ImRpZWdvbCIsImF1dGhvcml0aWVzIjpbIkNBTENVTEFUT1JfUkVBRCIsIlJPTEVfQURNSU4iLCJDQUxDVUxBVE9SX1dSSVRFIiwiVVNFUl9SRUFEIiwiVVNFUl9XUklURSJdLCJqdGkiOiI3Y2I0MmY4Yi1mZjZkLTRhNTEtYjk5ZS01MzE2YjZmNmNkY2QiLCJjbGllbnRfaWQiOiJleGNoYW5nZS1hcGktcmVhZC13cml0ZSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdfQ.LPAf_mi5qPzUCfcHnd8Oto042cUKzYt250tEZ24B_SbmRVqZJUOz_lCXBI1_xDOwnZJiWlVXlJhrleZNd8L2wh678l2ZG-jj2n54lo1Yojx8ajzYhs-psEFkY0cNnaJfowCy9PbP8DqT7sm9mMG7wj_Es9wcMiccb-hbA8u6rLAOacwiW0AXJ20Dl3-2t8Ft_sYJ_2hMKfqrGnZ7JeCBOjyl1iQDCr_7ityJPpTDirFZdG778f3UnPAX1_avU9DzZEgv82ZzXDE_ZLMiKHlN5Ip9VyQx2hpwWdLTsfsIMgVZtQ-Z417hd86R0Q5ogvE5x60RBe6s_rlnXp1hi4-2pQ",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9999/api/users/1",
+			"request": {
+				"url": "http://localhost:9999/api/users",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1ODkyNjAyMjcsInVzZXJfbmFtZSI6ImRpZWdvbCIsImF1dGhvcml0aWVzIjpbIkNBTENVTEFUT1JfUkVBRCIsIlJPTEVfQURNSU4iLCJDQUxDVUxBVE9SX1dSSVRFIiwiVVNFUl9SRUFEIiwiVVNFUl9XUklURSJdLCJqdGkiOiIwZDU1OWJlNS1lZmE5LTQ2ZTgtYmQ4ZC0wN2ExMGU4MDk2MDEiLCJjbGllbnRfaWQiOiJleGNoYW5nZS1hcGktcmVhZC13cml0ZSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdfQ.g5rDq8AvAavC5dKWHh5wi5c3jV4yoOt2AE2huWgYsyk6-PRWML4cygauBDgPDXHBfp-ELKF-cJ3vlNmZxmcsJ39KyxJkeitpEaUttazV_vjvJQQhAUfQrGIGAyK2QUh5WQEF1QEVRWNXiqfhFEMKL68Ztu1mhkKVU1cafxiof2VirwQ8pvCZYFmEr83yeoO_IKWah-NZ4mPqXZygYsNbtx4RNdD5Owe55lyFGFRKhVjtPJVyQi9kCxNkNItxZJ-Th-4RiJlIo5F0cg9NBcUJEc-iZbkNYQoiZtBJFgIGb2t24zJqju996A4cVaaEyQbYQ7guKniZDH2nowL3byOSVA",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9999/api/users/findByUsername?username=diegol",
+			"request": {
+				"url": {
+					"raw": "http://localhost:9999/api/users/findByUsername?username=diegol",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"api",
+						"users",
+						"findByUsername"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "diegol",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer  eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1ODkyNjAyMjcsInVzZXJfbmFtZSI6ImRpZWdvbCIsImF1dGhvcml0aWVzIjpbIkNBTENVTEFUT1JfUkVBRCIsIlJPTEVfQURNSU4iLCJDQUxDVUxBVE9SX1dSSVRFIiwiVVNFUl9SRUFEIiwiVVNFUl9XUklURSJdLCJqdGkiOiIwZDU1OWJlNS1lZmE5LTQ2ZTgtYmQ4ZC0wN2ExMGU4MDk2MDEiLCJjbGllbnRfaWQiOiJleGNoYW5nZS1hcGktcmVhZC13cml0ZSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdfQ.g5rDq8AvAavC5dKWHh5wi5c3jV4yoOt2AE2huWgYsyk6-PRWML4cygauBDgPDXHBfp-ELKF-cJ3vlNmZxmcsJ39KyxJkeitpEaUttazV_vjvJQQhAUfQrGIGAyK2QUh5WQEF1QEVRWNXiqfhFEMKL68Ztu1mhkKVU1cafxiof2VirwQ8pvCZYFmEr83yeoO_IKWah-NZ4mPqXZygYsNbtx4RNdD5Owe55lyFGFRKhVjtPJVyQi9kCxNkNItxZJ-Th-4RiJlIo5F0cg9NBcUJEc-iZbkNYQoiZtBJFgIGb2t24zJqju996A4cVaaEyQbYQ7guKniZDH2nowL3byOSVA",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9999/api/signin",
+			"request": {
+				"url": "localhost:9999/api/signin",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer  eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1ODkwODI5MjMsInVzZXJfbmFtZSI6ImFsdmFybyIsImF1dGhvcml0aWVzIjpbIlJPTEVfQ0xJRU5UIl0sImp0aSI6ImE4YWRhMGVkLWMzYWEtNGJjMy04OWVhLTU2OWY3OTEzOGE3YSIsImNsaWVudF9pZCI6ImV4Y2hhbmdlLWFwaS1yZWFkLXdyaXRlIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.hD4kRLIxKEgZow7zERGK5PP19Ae0GnIhwtNJ0ym57dmOjk6CiVbTmEUXYZTGz1fp_f_f9wZb95HUlFGzTD_rXN_pJ8E9iplU6L7_WwZByIH74iAOIc8Xq4yYx2NKaeq1ANJuKvPPyRcn0X06PMLK6grDW3gvL5Ya8hth_df4zdky931hV7RJnYGH_-L_-my9FNpyVuZ5SfmnlW5VcC4EhKeiXn3jE0_wyZmN_WSZsHqp0jD6q9fIZC6IA6Gpo-ORuoSuuyM7sWrOyn_8lAc09pQV4qoAsIVCsGUq2OJTWvOsd8OGnHw_f1CFpPwq1ycncNXDLJO2jYx5UTkiUpqH0g",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"alberto\",\n\t\"password\":\"alberto\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9999/api/users/9/changePassword?newPassword=mikaPass",
+			"request": {
+				"url": {
+					"raw": "http://localhost:9999/api/users/9/changePassword?newPassword=mikaPass",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"api",
+						"users",
+						"9",
+						"changePassword"
+					],
+					"query": [
+						{
+							"key": "newPassword",
+							"value": "mikaPass",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer  eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1ODg1NDYyNTIsInVzZXJfbmFtZSI6ImRpZWdvbCIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwianRpIjoiNTExMzZjZDYtZTcwYi00NGE1LTg2MjItZjVmYjJmMTc3MDQwIiwiY2xpZW50X2lkIjoiY2xpZW50SWQiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXX0.FIMl3W6ORcWXly_Wnrd5W2rZQgqAbAKURaKmeHqmQHEHKOClH_1fnDyz8Vp6piYRrL4b1tf4nWjIAUyDKITohMnVou_6ExrB0Eh8eOYoXdoGyT6MFMuZoYp_jTLaWlgNzsVJGCGF-aPW7r-tWRljd_x5-Ot2BFm_JxFLlSDBLinbELenyU8Z75xvyJW5cKTErEoPpDGPrjXc7olEN-tpxpCYZQj1pclAx8wX7mVy8VvSH15D6KXSftZf-6sEQ8pDrw5X_fBi-qcXrxk2Bjm1dCcTnuUmotg54L1G8u0dd3X6JV9WN_KFIvDPfYGN_SRTVfbc4l6kFN-14XOtpLkVIg",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/currency-api/currencies",
+			"request": {
+				"url": "localhost:8080/currency-api/currencies",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/currency-api/currencies/3",
+			"request": {
+				"url": "localhost:8080/currency-api/currencies/3",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

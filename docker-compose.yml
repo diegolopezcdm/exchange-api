@@ -1,0 +1,62 @@
+version: "2"
+services:
+  config:
+    image: exchangueconfig:latest
+    ports:
+      - "8888:8888"
+  discovery:
+    image: exchanguediscovey:latest
+    ports:
+      - "8761:8761"
+  # this is done intentionally for testing hystrix
+  #currency:
+    #image: exchanguecurrency:latest
+    #depends_on:
+    #  - "config"
+    #ports:
+    #  - "8080:8080"
+    #links:
+    #  - discovery
+  security-db:
+    image: postgres:12
+    environment:
+      - POSTGRES_USER=dbsecurityuser
+      - POSTGRES_PASSWORD=dbsecuritypassword
+      - POSTGRES_DB=exchangeSecurity
+    ports:
+      - "5432:5432"
+  security:
+    image: exchanguesecurity:latest
+    ports:
+      - "9999:9999"
+    links:
+      - security-db
+  calculator:
+    image: exchanguecalculator:latest
+    depends_on:
+      - "discovery"
+    ports:
+      - "8081:8081"
+    links:
+      - discovery
+      - security-db
+      - rabbit
+  gateway:
+    image: exchanguegateway:latest
+    ports:
+      - "9005:9005"
+    links:
+      - calculator
+      - security
+  rabbit:
+    image: rabbitmq
+    environment:
+      RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
+      RABBITMQ_DEFAULT_USER: "admin"
+      RABBITMQ_DEFAULT_PASS: "admin"
+      RABBITMQ_DEFAULT_VHOST: "/"
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    volumes:
+      - "./enabled_plugins:/etc/rabbitmq/enabled_plugins"
