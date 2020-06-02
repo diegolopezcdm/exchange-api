@@ -54,7 +54,7 @@
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
 		<dependency>
-            <groupId>com.diego</groupId>
+            <groupId>com.dlopez</groupId>
             <artifactId>exxhange-security</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
         </dependency>
